@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventos — Eventos Chiapas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <span class="logo-icon">🌿</span> Eventos Chiapas
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="eventos.html" class="active">Eventos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ENCABEZADO DE PÁGINA -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Próximos Eventos</h1>
+      <p>Descubre todo lo que Chiapas tiene para ofrecerte</p>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <span class="filter-label">Filtrar por categoría:</span>
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="cultural">Cultural</button>
+        <button class="filter-btn" data-filter="corporativo">Corporativo</button>
+        <button class="filter-btn" data-filter="aventura">Aventura</button>
+        <button class="filter-btn" data-filter="social">Social</button>
+      </div>
+
+      <!-- LISTA DE EVENTOS -->
+      <div class="events-grid" id="eventsGrid">
+
+        <article class="event-card" data-category="cultural">
+          <div class="event-badge cultural">Cultural</div>
+          <div class="event-body">
+            <div class="event-date">
+              <span class="day">14</span>
+              <span class="month">Jun</span>
+            </div>
+            <div class="event-info">
+              <h3>Festival de Arte Indígena</h3>
+              <p>Exposición de artesanías, música tradicional y danza folclórica de las comunidades de Los Altos.</p>
+              <div class="event-meta">
+                <span>📍 San Cristóbal de las Casas</span>
+                <span>🕐 10:00 – 20:00 hrs</span>
+              </div>
+            </div>
+          </div>
+          <a href="contacto.html" class="btn btn-sm">Más información</a>
+        </article>
+
+        <article class="event-card" data-category="corporativo">
+          <div class="event-badge corporativo">Corporativo</div>
+          <div class="event-body">
+            <div class="event-date">
+              <span class="day">21</span>
+              <span class="month">Jun</span>
+            </div>
+            <div class="event-info">
+              <h3>Congreso Empresarial Chiapas 2026</h3>
+              <p>Reunión de líderes empresariales, charlas magistrales y networking enfocado en el desarrollo regional.</p>
+              <div class="event-meta">
+                <span>📍 Hotel Camino Real, Tuxtla Gutiérrez</span>
+                <span>🕐 09:00 – 18:00 hrs</span>
+              </div>
+            </div>
+          </div>
+          <a href="contacto.html" class="btn btn-sm">Más información</a>
+        </article>
+
+        <article class="event-card" data-category="aventura">
+          <div class="event-badge aventura">Aventura</div>
+          <div class="event-body">
+            <div class="event-date">
+              <span class="day">05</span>
+              <span class="month">Jul</span>
+            </div>
+            <div class="event-info">
+              <h3>Senderismo en el Cañón del Sumidero</h3>
+              <p>Recorrido guiado por los senderos del Cañón del Sumidero con avistamiento de fauna y paisajes únicos.</p>
+              <div class="event-meta">
+                <span>📍 Cañón del Sumidero</span>
+                <span>🕐 07:00 – 14:00 hrs</span>
+              </div>
+            </div>
+          </div>
+          <a href="contacto.html" class="btn btn-sm">Más información</a>
+        </article>
+
+        <article class="event-card" data-category="social">
+          <div class="event-badge social">Social</div>
+          <div class="event-body">
+            <div class="event-date">
+              <span class="day">12</span>
+              <span class="month">Jul</span>
+            </div>
+            <div class="event-info">
+              <h3>Feria Gastronómica Chiapaneca</h3>
+              <p>Una celebración de los sabores locales: cochito horneado, pozol, tamales chiapanecos y más.</p>
+              <div class="event-meta">
+                <span>📍 Plaza Central, Chiapa de Corzo</span>
+                <span>🕐 12:00 – 22:00 hrs</span>
+              </div>
+            </div>
+          </div>
+          <a href="contacto.html" class="btn btn-sm">Más información</a>
+        </article>
+
+        <article class="event-card" data-category="cultural">
+          <div class="event-badge cultural">Cultural</div>
+          <div class="event-body">
+            <div class="event-date">
+              <span class="day">19</span>
+              <span class="month">Jul</span>
+            </div>
+            <div class="event-info">
+              <h3>Noche de Marimba en el Parque</h3>
+              <p>Concierto gratuito al aire libre con los mejores grupos de marimba de Tuxtla Gutiérrez.</p>
+              <div class="event-meta">
+                <span>📍 Parque de la Marimba, Tuxtla Gutiérrez</span>
+                <span>🕐 19:00 – 22:00 hrs</span>
+              </div>
+            </div>
+          </div>
+          <a href="contacto.html" class="btn btn-sm">Más información</a>
+        </article>
+
+        <article class="event-card" data-category="aventura">
+          <div class="event-badge aventura">Aventura</div>
+          <div class="event-body">
+            <div class="event-date">
+              <span class="day">26</span>
+              <span class="month">Jul</span>
+            </div>
+            <div class="event-info">
+              <h3>Kayak en Lagunas de Montebello</h3>
+              <p>Experiencia acuática en las coloridas lagunas del Parque Nacional Lagunas de Montebello.</p>
+              <div class="event-meta">
+                <span>📍 Lagunas de Montebello</span>
+                <span>🕐 08:00 – 15:00 hrs</span>
+              </div>
+            </div>
+          </div>
+          <a href="contacto.html" class="btn btn-sm">Más información</a>
+        </article>
+
+      </div>
+
+      <!-- MENSAJE SIN RESULTADOS -->
+      <p class="no-results hidden" id="noResults">No hay eventos en esta categoría por el momento.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Eventos Chiapas — Todos los derechos reservados.</p>
+      <p>📍 Tuxtla Gutiérrez, Chiapas, México</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

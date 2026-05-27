@@ -13,7 +13,11 @@
   --color-text:      #2c2c2c;
   --color-text-light:#666666;
   --color-border:    #ddd;
-  --font-main: 'Segoe UI', Arial, sans-serif;
+  --font-main: 'Open Sans', Arial, sans-serif;
+  --font-heading: 'Montserrat', 'Open Sans', Arial, sans-serif;
+  --color-family: #ff6f61; /* cálido, amigable */
+  --color-family-light: #fff3e0;
+  --color-family-accent: #ffd54f;
   --radius: 8px;
   --shadow: 0 2px 12px rgba(0,0,0,0.10);
   --shadow-hover: 0 6px 24px rgba(0,0,0,0.15);
@@ -703,6 +707,50 @@ header {
 
 .footer p + p {
   margin-top: 0.3rem;
+}
+
+/* ============================================
+   FAMILY — Estilo familiar llamativo
+   ============================================ */
+.family-section {
+  background: linear-gradient(135deg, var(--color-family) 0%, var(--color-accent) 60%);
+  color: #ffffff;
+  padding: 3.5rem 1.25rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  background-image: radial-gradient(circle at 10% 10%, rgba(255,255,255,0.06), transparent 10%),
+                    radial-gradient(circle at 90% 90%, rgba(255,255,255,0.04), transparent 10%);
+}
+.family-section .container {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  align-items: center;
+}
+.family-hero h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+.family-hero p { color: rgba(255,255,255,0.95); margin-bottom: 1rem; }
+.family-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.family-card { background: rgba(255,255,255,0.12); padding: 1rem; border-radius: 10px; text-align:center; color:#fff; box-shadow: 0 4px 14px rgba(0,0,0,0.08); transition: transform var(--transition); }
+.family-card:hover { transform: translateY(-6px); }
+.family-card .icon { font-size: 2rem; margin-bottom: 0.5rem; display:inline-block; background: rgba(255,255,255,0.1); padding:0.5rem; border-radius: 999px; }
+.family-cta .btn { background: #fff; color: var(--color-family); font-weight:700; }
+
+@media (max-width: 768px) {
+  .family-section .container { grid-template-columns: 1fr; }
+  .family-cards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .family-cards { grid-template-columns: 1fr; }
+  .family-hero h2 { font-size: 1.4rem; }
 }
 
 /* ============================================

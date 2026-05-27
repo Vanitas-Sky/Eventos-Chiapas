@@ -30,3 +30,34 @@ section{
     margin: 15px;
     border-radius: 5px;
 }
+
+/* Mejoras visuales */
+
+body{
+    line-height: 1.6;
+}
+
+header{
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav a:hover{
+    color: yellow;
+}
+
+.card{
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+button{
+    background-color: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}

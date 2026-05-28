@@ -8,10 +8,10 @@ Sitio web informativo para una agencia de organización de eventos en Chiapas, M
 
 | Nombre |
 |--------|
-| Jose Alberto Gomez Vazquez |
-| Sergio Armando Lopez Hernandez |
-| Paulina Mendez Hernandez |
-| Abner Ismael Rodriguez Gomez |
+| Jose Alberto Gomez Vazquez 100%|
+| Sergio Armando Lopez Hernandez 100%|
+| Paulina Mendez Hernandez 100%|
+| Abner Ismael Rodriguez Gomez 100%|
 
 ---
 

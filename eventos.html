@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Próximos Eventos</title>
   <meta name="description" content="Explora los próximos eventos en Chiapas. Festivales culturales, congresos empresariales, turismo de aventura y ferias gastronómicas.">
+  <meta name="theme-color" content="#1B5E20" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="img/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icon-192.png" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,6 +188,10 @@
     <div class="container footer-content">
       <p>&copy; 2026 Eventos Chiapas — Todos los derechos reservados.</p>
       <p class="footer-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Tuxtla Gutiérrez, Chiapas, México</p>
+      <div class="pwa-tools">
+        <p id="pwaStatus" role="status" aria-live="polite">Comprobando disponibilidad de la aplicación...</p>
+        <button id="installApp" class="btn btn-secondary install-button" type="button" hidden>Instalar aplicación</button>
+      </div>
     </div>
   </footer>
 

@@ -110,6 +110,85 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ==============================
+    // APLICACIÓN WEB PROGRESIVA
+    // ==============================
+
+    const pwaStatus = document.getElementById('pwaStatus');
+    const installButton = document.getElementById('installApp');
+    let deferredInstallPrompt = null;
+    let serviceWorkerReady = false;
+
+    function updatePwaStatus() {
+        if (!pwaStatus) return;
+
+        if (!navigator.onLine) {
+            pwaStatus.textContent = 'Sin conexión: puedes consultar las páginas y recursos guardados en este dispositivo.';
+        } else if (!window.isSecureContext) {
+            pwaStatus.textContent = 'Para instalar la aplicación y usar el modo sin conexión, abre el sitio desde HTTPS o localhost.';
+        } else if (!('serviceWorker' in navigator)) {
+            pwaStatus.textContent = 'Este navegador no admite el modo sin conexión de la aplicación.';
+        } else if (serviceWorkerReady) {
+            pwaStatus.textContent = 'Aplicación lista. Las páginas y recursos locales están disponibles sin conexión.';
+        } else {
+            pwaStatus.textContent = 'Conectado. Preparando la aplicación para su uso sin conexión...';
+        }
+    }
+
+    updatePwaStatus();
+    window.addEventListener('online', updatePwaStatus);
+    window.addEventListener('offline', updatePwaStatus);
+
+    window.addEventListener('beforeinstallprompt', function (event) {
+        event.preventDefault();
+        deferredInstallPrompt = event;
+        if (installButton) installButton.hidden = false;
+    });
+
+    window.addEventListener('appinstalled', function () {
+        deferredInstallPrompt = null;
+        if (installButton) installButton.hidden = true;
+        if (pwaStatus) pwaStatus.textContent = 'Eventos Chiapas está instalada en este dispositivo.';
+    });
+
+    if (installButton) {
+        installButton.addEventListener('click', async function () {
+            if (!deferredInstallPrompt) return;
+
+            try {
+                deferredInstallPrompt.prompt();
+                await deferredInstallPrompt.userChoice;
+            } catch (error) {
+                if (pwaStatus) {
+                    pwaStatus.textContent = 'No se pudo iniciar la instalación. Inténtalo desde el menú del navegador.';
+                }
+                console.error('No se pudo iniciar la instalación de la aplicación:', error);
+            } finally {
+                deferredInstallPrompt = null;
+                installButton.hidden = true;
+            }
+        });
+    }
+
+    if ('serviceWorker' in navigator && window.isSecureContext) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(function () {
+                return navigator.serviceWorker.ready;
+            })
+            .then(function () {
+                serviceWorkerReady = true;
+                updatePwaStatus();
+            })
+            .catch(function (error) {
+                if (pwaStatus) {
+                    pwaStatus.textContent = 'No se pudo preparar el modo sin conexión. Revisa la consola del navegador.';
+                }
+                console.error('No se pudo registrar el service worker:', error);
+            });
+    } else {
+        updatePwaStatus();
+    }
+
     console.log('Eventos Chiapas cargado correctamente');
 
 });

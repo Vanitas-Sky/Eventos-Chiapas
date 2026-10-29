@@ -1,0 +1,26 @@
+{
+  "id": "./index.html",
+  "name": "Eventos Chiapas",
+  "short_name": "Eventos Chiapas",
+  "description": "Conoce servicios y próximos eventos en Chiapas.",
+  "lang": "es-MX",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F9F9F6",
+  "theme_color": "#1B5E20",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

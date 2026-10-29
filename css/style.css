@@ -797,6 +797,22 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.75;
 }
 
+.pwa-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.pwa-tools p {
+  font-size: 0.85rem;
+}
+
+.install-button[hidden] {
+  display: none;
+}
+
 /* ==============================
    UTILIDADES
    ============================== */
